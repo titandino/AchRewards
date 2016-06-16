@@ -18,7 +18,7 @@ private static HashMap<Achievement, ItemStack> REWARDS = new HashMap<Achievement
 
 	@Override
 	public void onEnable() {
-		initRewards();
+		initDefaults();
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 
@@ -27,8 +27,41 @@ private static HashMap<Achievement, ItemStack> REWARDS = new HashMap<Achievement
 
 	}
 	
-	public void initRewards() {
-		REWARDS.put(Achievement.OPEN_INVENTORY, new ItemStack(Material.STONE_AXE, 1));
+	public void initDefaults() {
+		REWARDS.put(Achievement.OPEN_INVENTORY, new ItemStack(Material.BED, 1));
+		REWARDS.put(Achievement.MINE_WOOD, new ItemStack(Material.APPLE, 5));
+		REWARDS.put(Achievement.BUILD_WORKBENCH, new ItemStack(Material.TORCH, 16));
+		REWARDS.put(Achievement.BUILD_PICKAXE, new ItemStack(Material.CHEST, 2));
+		REWARDS.put(Achievement.BUILD_BETTER_PICKAXE, new ItemStack(Material.WATER_BUCKET, 1));
+		REWARDS.put(Achievement.BUILD_FURNACE, new ItemStack(Material.COAL, 8));
+		REWARDS.put(Achievement.ACQUIRE_IRON, new ItemStack(Material.IRON_CHESTPLATE, 1));
+		REWARDS.put(Achievement.BUILD_HOE, new ItemStack(Material.SEEDS, 32));
+		REWARDS.put(Achievement.MAKE_BREAD, new ItemStack(Material.BAKED_POTATO, 16));
+		REWARDS.put(Achievement.BAKE_CAKE, new ItemStack(Material.RABBIT_STEW, 16));
+		REWARDS.put(Achievement.COOK_FISH, new ItemStack(Material.GOLDEN_CARROT, 1));
+		REWARDS.put(Achievement.ON_A_RAIL, new ItemStack(Material.RAILS, 32));
+		REWARDS.put(Achievement.BUILD_SWORD, new ItemStack(Material.LEATHER_CHESTPLATE, 1));
+		REWARDS.put(Achievement.KILL_ENEMY, new ItemStack(Material.LEATHER_LEGGINGS, 1));
+		REWARDS.put(Achievement.KILL_COW, new ItemStack(Material.LEATHER_HELMET, 1));
+		REWARDS.put(Achievement.FLY_PIG, new ItemStack(Material.GOLDEN_APPLE, 1));
+		REWARDS.put(Achievement.SNIPE_SKELETON, new ItemStack(Material.ARROW, 64));
+		REWARDS.put(Achievement.GET_DIAMONDS, new ItemStack(Material.DIAMOND_SPADE, 1));
+		REWARDS.put(Achievement.NETHER_PORTAL, new ItemStack(Material.GLOWSTONE, 8));
+		REWARDS.put(Achievement.GHAST_RETURN, new ItemStack(Material.GHAST_TEAR, 10));
+		REWARDS.put(Achievement.GET_BLAZE_ROD, new ItemStack(Material.MAGMA_CREAM, 6));
+		REWARDS.put(Achievement.BREW_POTION, new ItemStack(Material.NETHER_WARTS, 16));
+		REWARDS.put(Achievement.END_PORTAL, new ItemStack(Material.DRAGON_EGG, 1));
+		REWARDS.put(Achievement.THE_END, new ItemStack(Material.ENDER_STONE, 32));
+		REWARDS.put(Achievement.ENCHANTMENTS, new ItemStack(Material.EXP_BOTTLE, 16));
+		REWARDS.put(Achievement.OVERKILL, new ItemStack(Material.DIAMOND_SWORD, 1));
+		REWARDS.put(Achievement.BOOKCASE, new ItemStack(Material.BOOKSHELF, 5));
+		REWARDS.put(Achievement.EXPLORE_ALL_BIOMES, new ItemStack(Material.EMERALD, 32));
+		REWARDS.put(Achievement.SPAWN_WITHER, new ItemStack(Material.OBSIDIAN, 32));
+		REWARDS.put(Achievement.KILL_WITHER, new ItemStack(Material.NETHER_STAR, 1));
+		REWARDS.put(Achievement.FULL_BEACON, new ItemStack(Material.DIAMOND_BLOCK, 1));
+		REWARDS.put(Achievement.BREED_COW, new ItemStack(Material.RAW_BEEF, 16));
+		REWARDS.put(Achievement.DIAMONDS_TO_YOU, new ItemStack(Material.DIAMOND, 3));
+		REWARDS.put(Achievement.OVERPOWERED, new ItemStack(Material.GOLDEN_APPLE, 16));
 	}
 
 	@Override
