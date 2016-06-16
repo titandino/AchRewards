@@ -1,0 +1,12 @@
+ name: TrentARewards
+ version: 0.1
+ description: Rewards players for various achievements they earn.
+ author: Titandino
+ 
+ main: com.trenton.AchievementRewards
+ 
+ commands:
+   claim:
+     description: Claims rewards that were unable to be recieved due to full inventory.
+     permission: achievementrewards.claim
+     usage: /claim
