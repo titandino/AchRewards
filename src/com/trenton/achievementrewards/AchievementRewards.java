@@ -22,7 +22,8 @@ public class AchievementRewards extends JavaPlugin implements Listener {
 
 	private static HashMap<String, ArrayList<Achievement>> MISSED_MAP;
 
-	@Override public void onEnable() {
+	@Override 
+	public void onEnable() {
 		loadRewards();
 		MISSED_MAP = SerializableFileManager.loadMissedAchievementMap();
 		getServer().getPluginManager().registerEvents(this, this);
@@ -86,11 +87,13 @@ public class AchievementRewards extends JavaPlugin implements Listener {
 	public void achievementEarned(PlayerAchievementAwardedEvent event) {
 		ItemStack reward = REWARDS.get(event.getAchievement());
 		if (reward != null) {
-			if (event.getPlayer().getInventory().firstEmpty() != -1)
+			if (event.getPlayer().getInventory().firstEmpty() != -1) {
 				event.getPlayer().getInventory().addItem(reward);
-			else
+				event.getPlayer().sendMessage("Congratulations! You recieved " + reward.getAmount() + " " + reward.getType().name().toLowerCase().replace("_", " ") + "!");
+			} else {
 				addMissedAchievement(event.getPlayer(), event.getAchievement());
-			event.getPlayer().sendMessage("Congratulations! You recieved " + reward.getAmount() + " " + reward.getType().name().toLowerCase().replace("_", " ") + "!");
+				event.getPlayer().sendMessage("You missed out on a reward for an achievement! Do /claim with enough inventory space!");
+			}
 		} else {
 			event.getPlayer().sendMessage("No reward added for: " + event.getAchievement().name() + ".");
 		}
