@@ -1,4 +1,4 @@
-package com.trenton.achievementrewards;
+package com.trenton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
